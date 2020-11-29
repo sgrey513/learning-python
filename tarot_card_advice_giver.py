@@ -140,8 +140,12 @@ your_card_suit = ''
 your_card_major = ''
 your_card_minor = ''
 your_card_suit_number = 0
+rank_numbers = []
+suit_numbers = []
 your_card_rank_number = 0
 your_card_major_number = 0
+number_of_suits = 0
+number_of_ranks = 0
 my_advice = ''
 magic_number = 0
 
@@ -166,12 +170,16 @@ if magic_number < 22:
 #if it's not major, it's minor
 elif magic_number >= 22:
     #assign rank
-    index = int(random.randint(0,13))
-    your_card_rank = random.choice(ranks)
-    your_card_rank_number = ranks.index(str(your_card_rank))
+
+    number_of_ranks = len(ranks)
+    rank_numbers = list(range(number_of_ranks))
+    your_card_rank_number = random.choice(rank_numbers)
+    your_card_rank = ranks[your_card_rank_number]
 
     #assign suit
-    your_card_suit_number = int(random.randint(0,3))
+    number_of_suits = len(suits)
+    suit_numbers = list(range(number_of_suits))                    
+    your_card_suit_number = random.choice(suit_numbers)
     your_card_suit = suits[your_card_suit_number]
 
         #find advice
