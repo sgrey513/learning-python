@@ -1,44 +1,4 @@
-noun1 = ''
-noun2 = ''
-noun3 = ''
-noun4 = ''
 
-plural_noun1= ''
-plural_noun2 = ''
-plural_noun3 = ''
-
-verb1 = ''
-verb2 = ''
-verb3 = ''
-verb4 = ''
-past_tense_verb1 = ''
-ing_verb1 = ''
-ing_verb2 = ''
-
-adj1 = ''
-adj2 = ''
-adj3 = ''
-adj4 = ''
-adj5 = ''
-adj6 = ''
-
-place1 = ''
-place2 = ''
-
-adverb1 = ''
-adverb2 = ''
-adverb3 = ''
-
-name_of_person_in_room1 = ''
-name_of_person_in_room2 = ''
-
-number1 = ''
-emotion1 = ''
-body_part1 = ''
-job1 = ''
-insult1= ''
-kind_of_building1 = ''
-kind_of_person1 = ''
 
 noun1 = input('A noun: ')
 noun2 = input('A noun: ')
