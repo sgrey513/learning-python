@@ -55,6 +55,7 @@ def get_article(str):
 article1 = get_article(adj1)
 article2 = get_article(adj3)
 article3 = get_article(kind_of_building1)
+article4 = get_article(job1)
    
 
 print('One moment while I write your story!')
@@ -80,7 +81,7 @@ print(name_of_person_in_room2 + ', the worst', noun1,
       'were known far and', adverb2 + '.',
       name_of_person_in_room1,
       'was', adj5 + '.')
-print('One day a', job1, 'for the local newspaper asked',
+print('One day', article4, job1, 'for the local newspaper asked',
       name_of_person_in_room1,
       'if they wanted to', verb3,
       'anything on live', noun3 + '. They',
