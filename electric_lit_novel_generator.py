@@ -283,9 +283,10 @@ def choose_enemy(choices):
 #DEFINE function to choose between a and an
 def get_article(adj):
     vowels = 'aeiouAEIOU'
+    exceptions = ['hour', 'hours']
     first_char = adj[0]
 
-    if first_char in vowels:
+    if first_char in vowels or exceptions:
         article = 'an'
     else:
         article = 'a'
@@ -310,6 +311,7 @@ enemy = choose_enemy(choices)
 #roll title and credits
 print("Electric Literature's Post-Apocalyptic Novel Generator")
 print('by Jess Zimmerman and Halimah Marcus')
+print('Original at https://electricliterature.com/discover-the-plot-of-your-post-apocalyptic-novel-with-our-handy-chart/')
 print('coded by Sarah Grey for the hell of it while learning Python')
 
 #i want a blank line
