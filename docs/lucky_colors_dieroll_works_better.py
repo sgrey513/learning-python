@@ -79,15 +79,15 @@ def introduce_players():
     player_1_name = input("Player 1, what is your name? ")
     player_2_name = input("Player 2, what is your name? ")
     players = [player_1_name, player_2_name]
+    current_player = players[0]
     return player_1_name, player_2_name, players, current_player
 
-def player_1_roll():
+def roll_dice():
     global players
     global current_player
     global die_roll
     global last_die_roll
-    current_player = player_1_name
-    print(player_1_name, ", it's your turn.")
+    print(current_player, ", it's your turn.")
     if input("Press the spacebar + return to roll the dice.") == ' ':
         die_roll = int(random.randint(1,6))
         print (current_player + ", you rolled", die_roll)
@@ -95,7 +95,7 @@ def player_1_roll():
         return last_die_roll
     else:
         print("Sorry, I didn't get that. Press the spacebar + return to roll the dice.")
-        player_1_roll()
+        roll_dice()
         
 introduce_players()
 build_deck()
@@ -103,7 +103,8 @@ print("Hello,", player_1_name, "and", player_2_name + "!")
 print(player_1_name + ", you'll go first.")
 print("Setting up the game.")
 deal()
-player_1_roll()
+roll_dice()
+
 
 
 
