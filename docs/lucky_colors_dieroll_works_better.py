@@ -63,14 +63,6 @@ def deal():
     print(player_2_name + ", your starting hand is:")
     print(str(player_2_hand[0:]))
     return player_1_hand, player_2_hand, deck
-    
-def set_up_game():
-    global deck
-    global red_pile 
-    global yellow_pile 
-    global green_pile 
-    global blue_pile 
-    global discard_pile 
 
 def introduce_players():
     global player_1_name
@@ -96,6 +88,25 @@ def roll_dice():
     else:
         print("Sorry, I didn't get that. Press the spacebar + return to roll the dice.")
         roll_dice()
+
+def draw_card(last_die_roll):
+    global current_player
+    global deck
+    new_card = []
+    if last_die_roll == 1:
+        print("You get to skip this turn. Lucky you!")
+    elif last_die_roll == 2:
+        new_card = random.choice(deck.red_cards)
+    elif last_die_roll == 3:
+        new_card = random.choice(deck.green_cards)
+    elif last_die_roll == 4:
+        new_card = random.choice(deck.blue_cards)
+    elif last_die_roll == 5:
+        new_card = random.choice(deck.blue_cards)
+    else:
+        print("Give one back!")
+    return new_card
+
         
 introduce_players()
 build_deck()
@@ -104,7 +115,7 @@ print(player_1_name + ", you'll go first.")
 print("Setting up the game.")
 deal()
 roll_dice()
-
+draw_card(last_die_roll)
 
 
 
