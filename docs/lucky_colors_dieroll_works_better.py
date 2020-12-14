@@ -41,9 +41,7 @@ def build_deck():
     yellow_cards = [[yellow, v] for v in zip(values)]
     deck = red_cards + green_cards + blue_cards + yellow_cards
     random.shuffle(deck)
-    return values
-    return colors
-    return deck
+    return values, colors, deck
 
 def deal():
     print("Dealing the cards.")
@@ -64,10 +62,7 @@ def deal():
                      random.choice(deck)]
     print(player_2_name + ", your starting hand is:")
     print(str(player_2_hand[0:]))
-    return player_1_hand
-    return player_2_hand
-    return deck
-    
+    return player_1_hand, player_2_hand, deck
     
 def set_up_game():
     global deck
@@ -84,10 +79,7 @@ def introduce_players():
     player_1_name = input("Player 1, what is your name? ")
     player_2_name = input("Player 2, what is your name? ")
     players = [player_1_name, player_2_name]
-    return player_1_name
-    return player_2_name
-    return players
-    return current_player
+    return player_1_name, player_2_name, players, current_player
 
 def player_1_roll():
     global players
