@@ -63,14 +63,6 @@ def deal():
     print(player_2_name + ", your starting hand is:")
     print(str(player_2_hand[0:]))
     return player_1_hand, player_2_hand, deck
-    
-def set_up_game():
-    global deck
-    global red_pile 
-    global yellow_pile 
-    global green_pile 
-    global blue_pile 
-    global discard_pile 
 
 def introduce_players():
     global player_1_name
@@ -79,15 +71,15 @@ def introduce_players():
     player_1_name = input("Player 1, what is your name? ")
     player_2_name = input("Player 2, what is your name? ")
     players = [player_1_name, player_2_name]
+    current_player = players[0]
     return player_1_name, player_2_name, players, current_player
 
-def player_1_roll():
+def roll_dice():
     global players
     global current_player
     global die_roll
     global last_die_roll
-    current_player = player_1_name
-    print(player_1_name, ", it's your turn.")
+    print(current_player, ", it's your turn.")
     if input("Press the spacebar + return to roll the dice.") == ' ':
         die_roll = int(random.randint(1,6))
         print (current_player + ", you rolled", die_roll)
@@ -95,7 +87,26 @@ def player_1_roll():
         return last_die_roll
     else:
         print("Sorry, I didn't get that. Press the spacebar + return to roll the dice.")
-        player_1_roll()
+        roll_dice()
+
+def draw_card(last_die_roll):
+    global current_player
+    global deck
+    new_card = []
+    if last_die_roll == 1:
+        print("You get to skip this turn. Lucky you!")
+    elif last_die_roll == 2:
+        new_card = random.choice(deck.red_cards)
+    elif last_die_roll == 3:
+        new_card = random.choice(deck.green_cards)
+    elif last_die_roll == 4:
+        new_card = random.choice(deck.blue_cards)
+    elif last_die_roll == 5:
+        new_card = random.choice(deck.blue_cards)
+    else:
+        print("Give one back!")
+    return new_card
+
         
 introduce_players()
 build_deck()
@@ -103,7 +114,8 @@ print("Hello,", player_1_name, "and", player_2_name + "!")
 print(player_1_name + ", you'll go first.")
 print("Setting up the game.")
 deal()
-player_1_roll()
+roll_dice()
+draw_card(last_die_roll)
 
 
 
